@@ -88,7 +88,7 @@ function verificacion() {
     searchFilterBoxes.push(checked);
   });
 
-//   imprimirTarjetas();
+   imprimirTarjetas();
 }
 
 function imprimirTarjetas() {
