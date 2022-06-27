@@ -91,7 +91,7 @@ filteredCardsData.sort((firstCard, secondCard) => {
         searchFilterBoxes.push(checked);
       });
     
-    //   imprimirTarjetas();
+       imprimirTarjetas();
     }
     
     function imprimirTarjetas() {
