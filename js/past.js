@@ -91,7 +91,7 @@ function crearTarjeta(event) {
       searchFilterBoxes.push(checked);
     });
   
-  //   imprimirTarjetas();
+     imprimirTarjetas();
   }
   
   function imprimirTarjetas() {
