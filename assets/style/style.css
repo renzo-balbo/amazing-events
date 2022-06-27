@@ -69,7 +69,7 @@ main {
 main h2{
     position: absolute;
     z-index: 5;
-    transform: translateY(2rem);
+    transform: translateY(.7rem);
     background-color: #160c28d2;
     border-radius: 20px;
 }
@@ -82,6 +82,9 @@ main h2{
     background-color: grey;
 }
 
+#barraDeBusqueda{
+    width: 90vw;
+}
 
 
 #messageArea{
@@ -144,8 +147,11 @@ th{
     main h2{
         position: absolute;
         z-index: 5;
-        transform: translateY(5rem);
+        transform: translateY(3rem);
         background-color: #160c28d2;
+    }
+    #barraDeBusqueda{
+        width: 80vw;
     }
 }
 
@@ -153,7 +159,7 @@ th{
 
 @media (min-width: 992px){
     #barraDeBusqueda{
-        width: 300px;
+        width: 80vw;
     }
 }
 

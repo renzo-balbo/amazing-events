@@ -88,18 +88,19 @@ function verificacion() {
     searchFilterBoxes.push(checked);
   });
 
-   imprimirTarjetas();
+  imprimirTarjetas();
 }
 
 function imprimirTarjetas() {
   limpiarTarjetas();
 
   const events = cardsData.filter(filtrarPorCheckbox).filter(filtrarPorTexto);
-  if (events.length != 0){
-  events.forEach((event) => {
-    cardContainer.appendChild(crearTarjeta(event));
-  });} else {
-    noResults()
+  if (events.length != 0) {
+    events.forEach((event) => {
+      cardContainer.appendChild(crearTarjeta(event));
+    });
+  } else {
+    noResults();
   }
 }
 
@@ -109,11 +110,11 @@ function limpiarTarjetas() {
   }
 }
 
-function noResults(){
-    let div = document.createElement('div')
-    div.innerHTML += `
-    <h5> No results were found. Try Again.</5>`
-    cardContainer.appendChild(div);
+function noResults() {
+  let div = document.createElement("div");
+  div.innerHTML += `
+    <h5> No results were found for "${searchTexts}". Try Again.</5>`;
+  cardContainer.appendChild(div);
 }
 
 function filtrarPorCheckbox(event) {
@@ -134,7 +135,7 @@ function filtrarPorTexto(event) {
   if (searchTexts.length != 0) {
     let retVal = false;
     searchTexts.forEach((word) => {
-      if (event.description.includes(word)) {
+      if (event.description.toLowerCase().includes(word.toLowerCase())) {
         retVal = true;
       }
     });
