@@ -24,7 +24,7 @@ function crearDetalles(event) {
             <p class="col-12 text-center text-black">Category: ${event.category}</p>
             <p class="col-12 text-center text-black">Place: ${event.place}</p>
             <p class="col-12 text-center text-black">Capacity: ${event.capacity}</p>
-            <p class="col-12 text-center text-black">Assistance or estimate: ${event.assistance}</p>
+            <p class="col-12 text-center text-black">Assistance or estimate: ${event.assistance ? event.assistance : event.estimate}</p>
             <p class="col-12 text-center text-black">Price: $${event.price}</p>
     </div>
 </div>
