@@ -27,7 +27,7 @@ function crearTarjeta(event) {
         </div>
         <div class="d-flex justify-content-between align-items-center more-info">
         <p class="pt-3">Price $${event.price}</p>
-        <a href="./details.html" class="btn btn-primary fondoRosa noBorder">More info</a>
+        <a href="./details.html?id=${event._id}" class="btn btn-primary fondoRosa noBorder">More info</a>
         </div>
         </div>
         `;
