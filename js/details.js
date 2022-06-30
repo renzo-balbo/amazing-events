@@ -1,11 +1,31 @@
-let cardsData = eventsData.events;
-let main = document.getElementById("detailsBox");
+const URI = 'http://amazing-events.herokuapp.com/api/events'
+let cardsData = [];
 
+function cargarDatos(URL){
+    fetch(URL)
+        .then (respuesta => respuesta.json())
+            .then(data =>{
+                let cardsData = data.events
+                crearDetalles(encontrarEvento(cardsData))
+            })
+    }
+
+cargarDatos(URI)
+
+
+// VARIABLES
+let main = document.getElementById("detailsBox");
 const queryString = location.search;
 const params = new URLSearchParams(queryString);
-const id = parseInt(params.get("id"));
+const id = params.get("id");
 
-const selectedEvent = cardsData.find((events) => events._id == id);
+// FUNCIONES
+
+function encontrarEvento(eventos){
+  let selectedEvent = eventos.find((events) => events._id == id);
+  console.log(selectedEvent)
+  return selectedEvent
+}
 
 function crearDetalles(event) {
   let div = document.createElement("div");
@@ -24,12 +44,10 @@ function crearDetalles(event) {
             <p class="col-12 text-center text-black">Category: ${event.category}</p>
             <p class="col-12 text-center text-black">Place: ${event.place}</p>
             <p class="col-12 text-center text-black">Capacity: ${event.capacity}</p>
-            <p class="col-12 text-center text-black">Assistance or estimate: ${event.assistance ? event.assistance : event.estimate}</p>
+            <p class="col-12 text-center text-black">${event.assistance ? 'Assistance' : 'Estimate'}: ${event.assistance ? event.assistance : event.estimate}</p>
             <p class="col-12 text-center text-black">Price: $${event.price}</p>
     </div>
 </div>
     `;
   main.appendChild(div);
 }
-
-crearDetalles(selectedEvent);
