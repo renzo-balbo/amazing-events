@@ -111,6 +111,12 @@ function creacionDeCheckboxes(arrayDeEventos){
     })
 }
 
+function noResults(lugarDeImpresion){
+    let div = document.createElement('div')
+    div.innerHTML +=`<p>Sorry! We failed to load our data, please try again later or contact us for a quick response.</p>`
+    lugarDeImpresion.appendChild(div)
+}
+
 function cargarDatos(URL){
     fetch(URL)
         .then (respuesta => respuesta.json())
@@ -144,6 +150,18 @@ function cargarDatos(URL){
                     crearRenglon(pasados, pastStats)
                 }
             })
+        .catch(respuesta =>{
+            if (cardContainer){
+                noResults(cardContainer)
+            }
+            if (cajaDetalles){
+                noResults(cajaDetalles)
+            }
+            if (tabla){
+                noResults(tabla)
+            }
+        })
+            
 }
 
 // Details
@@ -188,6 +206,7 @@ let pastStats = document.getElementById('pastStats');
 function rellenarTabla (eventos){
 let capacidad = eventos.map(event => event.capacity)
 let eventMaxCapacidad = eventos.find(event => event.capacity == Math.max(...capacidad))
+console.log(Math.max(...capacidad))
 
 let asistencia = eventos.map(event => event.assistance / event.capacity)
 let eventMaxAsistencia = eventos.find(event => event.assistance / event.capacity == Math.max(...asistencia))
