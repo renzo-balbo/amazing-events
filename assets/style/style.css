@@ -1,0 +1,188 @@
+/* --- GENERAL SETTINGS ---  */
+.fondoVioleta {
+    background-color: #160C28 !important;
+}
+
+.violeta {
+    color: #160C28 !important;
+}
+
+.fondoCeleste {
+    background-color: #ffebef !important;
+}
+
+.celeste {
+    color: #95B2B8 !important;
+}
+
+.fondoVerde {
+    background-color: #623CEA !important;
+    background: linear-gradient(180deg, #623cea 0%, #937bec 66%, #c0b3ee 85%);
+}
+
+.verde {
+    color: #623CEA !important;
+}
+
+.fondoRosa {
+    background-color: #D90368 !important;
+}
+
+.rosa {
+    color: #D90368 !important;
+}
+
+
+.roundBorder {
+    border: 5px solid black;
+    border-radius: 360px;
+}
+
+.noBorder{
+    border: none;
+}
+
+/* --- HEADER ---  */
+header {
+    min-height: 10vh;
+}
+
+.active{
+    border-bottom:2px solid #623CEA;
+}
+
+.nav-link:hover{
+    color: #623CEA !important;
+}
+
+
+/* --- CUERPO ---  */
+main {
+    min-height: 83vh;
+}
+
+.carousel{
+    height:fit-content;
+}
+
+
+main h2{
+    position: absolute;
+    z-index: 5;
+    transform: translateY(.7rem);
+    background-color: #160c28d2;
+    border-radius: 20px;
+}
+
+
+.botonDeBusqueda{
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid black;
+    background-color: grey;
+}
+
+#barraDeBusqueda{
+    width: 90vw;
+}
+
+
+#messageArea{
+    min-height: 200px;
+    resize: none;
+}
+
+.submitButton{
+    height: fit-content;
+}
+
+
+
+
+
+/* --- FOOTER ---  */
+footer {
+    height: 7vh;
+}
+
+
+/* TABLA */
+table, tr, td{
+    border: 1px solid black !important;
+}
+
+td, tr{
+    min-height: 1.5rem !important;
+}
+
+th{
+    background-color: #D90368 !important;
+}
+
+
+/* CARDS */
+
+.card{
+    border: 2px solid #95B2B8;
+    height: 28rem;
+}
+
+.card img, .card-body{ 
+    height: 14rem;
+}
+
+.card-description{
+    height: 8rem;
+}
+
+.more-info{
+    height: 6rem;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px){
+    main h2{
+        position: absolute;
+        z-index: 5;
+        transform: translateY(3rem);
+        background-color: #160c28d2;
+    }
+    #barraDeBusqueda{
+        width: 80vw;
+    }
+}
+
+
+
+@media (min-width: 992px){
+    #barraDeBusqueda{
+        width: 80vw;
+    }
+}
+
+
+@media (min-width: 1200px){
+    main h2{
+        position: absolute;
+        z-index: 5;
+        transform: translateY(6rem);
+        background-color: #160c28d2;
+    }
+
+    #barraDeBusqueda{
+        width: 500px;
+    }
+
+}
+
+@media (min-width:1400px){
+    main h2{
+        position: absolute;
+        z-index: 5;
+        transform: translateY(11rem);
+        background-color: #160c28d2;}
+
+}
